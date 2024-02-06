@@ -1,6 +1,6 @@
 import streamlit as st 
 from time import sleep
-from stqdm import stqdm # for getting animation after submit event 
+from tqdm import tqdm # for getting animation after submit event 
 import pandas as pd
 from transformers import pipeline
 import json
