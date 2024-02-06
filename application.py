@@ -86,7 +86,7 @@ def main():
         raw_text = st.text_area("Your Text","Enter Text Here")
         if raw_text !="Enter Text Here":
             doc = nlp(raw_text)
-            for _ in stqdm(range(50), desc="Please wait a bit. The model is fetching the results !!"):
+            for _ in tqdm(range(50), desc="Please wait a bit. The model is fetching the results !!"):
                 sleep(0.1)
             spacy_streamlit.visualize_ner(doc, labels=nlp.get_pipe("ner").labels, title= "List of Entities")
 
@@ -98,7 +98,7 @@ def main():
         if raw_text !="Enter Text Here":
             result = sentiment_analysis(raw_text)[0]
             sentiment = result['label']
-            for _ in stqdm(range(50), desc="Please wait a bit. The model is fetching the results !!"):
+            for _ in tqdm(range(50), desc="Please wait a bit. The model is fetching the results !!"):
                 sleep(0.1)
             if sentiment =="POSITIVE":
                 st.write("""# This text has a Positive Sentiment.  🤗""")
